@@ -18,7 +18,7 @@ const getStocksHistoricalData = ({
     dispatch(
       apiRequest({
         method: "get",
-        url: `${url}WIKI/${stockSymbol ?? "FB"}.json`,
+        url: `${url}WIKI/${stockSymbol ?? "ADBE"}.json`,
         key: key || "getStocksHistoricalData",
         onSuccess: GET_STOCK_HISTORICAL_DATA.SUCCESS,
         noSuccessMessage: false,

@@ -90,7 +90,7 @@ const StockActions: FC<StockActionsProps> = (props) => {
       collapse: period,
     };
     getStocksHistoricalData(
-      currentSymbol ?? "FB",
+      currentSymbol ?? "ADBE",
       Object.assign({}, defaultParams, params),
       "GET_STOCK_HISTORICAL_DATA_HISTORICAL_DATA"
     );

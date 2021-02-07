@@ -32,7 +32,7 @@ const defaultState: StockState = {
   symbolsObj: {},
   currentSymbolName: "",
   tmp: {
-    currentSymbolName: "Facebook inc",
+    currentSymbolName: "Adobe Inc.",
   },
   displaySMA: false,
   displayEMA: true,
