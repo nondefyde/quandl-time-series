@@ -1,0 +1,10 @@
+.app-loader {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  .app-loader-text {
+    padding-top: 20px;
+    opacity: 0.8;
+  }
+}
