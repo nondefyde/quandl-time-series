@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_shared/utils/symbols.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +102,7 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="14197000" />
+      <workItem from="1612648806546" duration="14385000" />
     </task>
     <task id="LOCAL-00001" summary="feat: created application state management">
       <created>1612659739604</created>
@@ -151,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612675813991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chore: enabled ema as default">
+      <created>1612676055164</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612676055164</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +173,8 @@
     <MESSAGE value="feat: added 30 day trends" />
     <MESSAGE value="chore: allowed to push .env.local" />
     <MESSAGE value="fix: chart colouring" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: chart colouring" />
+    <MESSAGE value="chore: enabled ema as default" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: enabled ema as default" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -175,10 +185,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612675810332">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612676052255">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612675810332" />
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612676052255" />
     <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612663873876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -195,17 +205,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612663873875" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612675816882">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612676057631">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612675816882" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612676057631" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1612632460249" />
-    <state x="291" y="164" width="858" height="572" key="find.popup" timestamp="1612635038994">
+    <state x="291" y="164" width="858" height="572" key="find.popup" timestamp="1612676183792">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="291" y="164" width="858" height="572" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1612635038994" />
+    <state x="291" y="164" width="858" height="572" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1612676183792" />
   </component>
 </project>

@@ -83,7 +83,7 @@ const stockReducer = (state = defaultState, action: Action): StockState => {
               currentSymbol,
               currentSymbolName: get(currentSymbol, "label", ""),
             }
-          : { currentSymbol: "FB", currentSymbolName: "Facebook inc" }
+          : { currentSymbol: "ADBE", currentSymbolName: "Adobe Inc." }
       );
     }
     case SET_CURRENT_SYMBOL: {
