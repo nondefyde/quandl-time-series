@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/stocks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +100,7 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="13653000" />
+      <workItem from="1612648806546" duration="13914000" />
     </task>
     <task id="LOCAL-00001" summary="feat: created application state management">
       <created>1612659739604</created>
@@ -137,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612662236056</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: added 30 day trends">
+      <created>1612675009092</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612675009092</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: allowed to push .env.local">
+      <created>1612675072888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612675072888</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +154,9 @@
     <MESSAGE value="feat: created application state management" />
     <MESSAGE value="feat: application ui" />
     <MESSAGE value="feat: implemented time-based zoom" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented time-based zoom" />
+    <MESSAGE value="feat: added 30 day trends" />
+    <MESSAGE value="chore: allowed to push .env.local" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: allowed to push .env.local" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -158,10 +167,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612662232103">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612675070245">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612662232103" />
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612675070245" />
     <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612663873876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -178,6 +187,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612663873875" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612675074603">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612675074603" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

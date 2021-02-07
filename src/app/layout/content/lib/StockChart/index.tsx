@@ -114,7 +114,9 @@ const StockChart: FC<StockChartProps> = (props) => {
         colors: "#ffffff",
       },
     },
-    colors: ["#3e82ff", "#f9d900", "#FF4560"],
+    colors: showSMA
+      ? ["#3e82ff", "#f9d900", "#FF4560"]
+      : ["#3e82ff", "#FF4560"],
     legend: {
       showForSingleSeries: true,
       show: true,
@@ -328,7 +330,9 @@ const StockChart: FC<StockChartProps> = (props) => {
     theme: {
       mode: "dark",
     },
-    colors: ["#3e82ff", "#f9d900", "#FF4560"],
+    colors: showSMA
+      ? ["#3e82ff", "#f9d900", "#FF4560"]
+      : ["#3e82ff", "#FF4560"],
     stroke: {
       curve: "straight",
     },
