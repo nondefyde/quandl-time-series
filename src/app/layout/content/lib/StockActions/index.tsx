@@ -81,7 +81,7 @@ const StockActions: FC<StockActionsProps> = (props) => {
       {},
       !isEmpty(duration?.[1]) && moment(duration?.[1]).isValid()
         ? { end_date: moment(duration?.[1]).toDate() }
-        : { end_date: new Date() }
+        : {}
     );
     const defaultParams = {
       transform,
@@ -117,10 +117,6 @@ const StockActions: FC<StockActionsProps> = (props) => {
     getStockPrices();
     getSymbols();
   }, []);
-
-  useEffect(() => {
-    setDuration([moment(oldest_available_date), moment(newest_available_date)]);
-  }, [oldest_available_date, newest_available_date]);
 
   return (
     <section className={"app-content-chart-actions"}>
