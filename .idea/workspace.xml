@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="feat: application ui">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/stocks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +107,7 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="3102000" />
+      <workItem from="1612648806546" duration="13653000" />
     </task>
     <task id="LOCAL-00001" summary="feat: created application state management">
       <created>1612659739604</created>
@@ -127,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612659816293</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: implemented time-based zoom">
+      <created>1612662236056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612662236056</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +146,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: created application state management" />
     <MESSAGE value="feat: application ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: application ui" />
+    <MESSAGE value="feat: implemented time-based zoom" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented time-based zoom" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -147,26 +158,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612659823930">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612662232103">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612659823930" />
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612659889671">
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612662232103" />
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612663873876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1612659889671" />
-    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1612659889669">
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1612663873876" />
+    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1612663873873">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1612659889669" />
-    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1612659889668">
+    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1612663873873" />
+    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1612663873871">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1612659889668" />
-    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1612659889670">
+    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1612663873871" />
+    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1612663873875">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612659889670" />
+    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612663873875" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

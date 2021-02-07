@@ -1,9 +1,11 @@
-import { Button, DatePicker, Select } from "antd";
+import { Button, DatePicker, Select, Tooltip } from "antd";
 import { RootState } from "../../../../../redux/types";
 import {
   getStockSymbols,
   setCurrentSymbol,
   getStocksHistoricalData,
+  setDisplaySMA,
+  setDisplayEMA,
 } from "../../../../../redux/actions";
 import { connect, ConnectedProps } from "react-redux";
 import { Moment } from "moment";
@@ -20,14 +22,23 @@ const dispatchProps = {
   getStockSymbols,
   setCurrentSymbol,
   getStocksHistoricalData,
+  setDisplayEMA,
+  setDisplaySMA,
 };
 // state derived props.
 const stateProps = (state: RootState) => ({
   symbols: state.stocks.symbols,
+  showSMA: state.stocks.displaySMA,
+  showEMA: state.stocks.displayEMA,
   currentSymbol: state.stocks.currentSymbol,
   gettingStocksHistoricalData:
     state.ui.loading["GET_STOCK_HISTORICAL_DATA_HISTORICAL_DATA"],
   gettingStockSymbols: state.ui.loading["GET_STOCK_SYMBOLS"],
+  newest_available_date:
+    state.stocks.historicalData?.newest_available_date ?? new Date(),
+  oldest_available_date:
+    state.stocks.historicalData?.oldest_available_date ??
+    moment().subtract(1, "day").toDate(),
 });
 
 // Creates connection to state
@@ -48,13 +59,36 @@ const StockActions: FC<StockActionsProps> = (props) => {
     getStockSymbols,
     gettingStockSymbols,
     symbols,
+    oldest_available_date,
+    newest_available_date,
+    setDisplaySMA,
+    setDisplayEMA,
+    showSMA,
+    showEMA,
   } = props;
   const [period, setPeriod] = useState("none");
   const [transform, setTransform] = useState("none");
-  const [duration, setDuration] = useState(undefined);
+  const [duration, setDuration] = useState<Moment[] | undefined>(undefined);
 
   const getStockPrices = (params = {}) => {
-    const defaultParams = { collapse: period };
+    const start_date = Object.assign(
+      {},
+      !isEmpty(duration?.[0]) && moment(duration?.[0]).isValid()
+        ? { start_date: moment(duration?.[0]).toDate() }
+        : {}
+    );
+    const end_date = Object.assign(
+      {},
+      !isEmpty(duration?.[1]) && moment(duration?.[1]).isValid()
+        ? { end_date: moment(duration?.[1]).toDate() }
+        : { end_date: new Date() }
+    );
+    const defaultParams = {
+      transform,
+      ...end_date,
+      ...start_date,
+      collapse: period,
+    };
     getStocksHistoricalData(
       currentSymbol ?? "FB",
       Object.assign({}, defaultParams, params),
@@ -78,26 +112,15 @@ const StockActions: FC<StockActionsProps> = (props) => {
   const onDurationChange = (duration: any) => {
     setDuration(duration);
   };
-  const onGetStockData = () => {
-    const start_date = Object.assign(
-      {},
-      !isEmpty(duration?.[0]) && moment(duration?.[0]).isValid()
-        ? { start_date: moment(duration?.[0]).toDate() }
-        : {}
-    );
-    const end_date = Object.assign(
-      {},
-      !isEmpty(duration?.[1]) && moment(duration?.[1]).isValid()
-        ? { end_date: moment(duration?.[1]).toDate() }
-        : {}
-    );
-    getStockPrices({ transform, ...end_date, ...start_date, collapse: period });
-  };
 
   useEffect(() => {
     getStockPrices();
     getSymbols();
   }, []);
+
+  useEffect(() => {
+    setDuration([moment(oldest_available_date), moment(newest_available_date)]);
+  }, [oldest_available_date, newest_available_date]);
 
   return (
     <section className={"app-content-chart-actions"}>
@@ -186,11 +209,16 @@ const StockActions: FC<StockActionsProps> = (props) => {
         <RangePicker
           style={{ width: "100%" }}
           disabledDate={(date: Moment) => {
-            return date.isAfter(new Date());
+            return (
+              date.isAfter(new Date(newest_available_date)) ||
+              date.isBefore(new Date(oldest_available_date))
+            );
           }}
+          //@ts-ignore
           value={duration}
           onChange={onDurationChange}
           disabled={gettingStocksHistoricalData}
+          allowClear
         />
       </div>
       <div className={"app-content-chart-action"} style={{ marginTop: 20 }}>
@@ -202,12 +230,102 @@ const StockActions: FC<StockActionsProps> = (props) => {
               <i className="ri-stock-line" />
             </span>
           }
-          onClick={() => onGetStockData()}
+          onClick={() => getStockPrices()}
           disabled={gettingStocksHistoricalData}
           loading={gettingStocksHistoricalData}
         >
           Get stock prices
         </Button>
+      </div>
+      <div
+        className={"app-content-chart-action"}
+        style={{
+          marginTop: 30,
+          borderTop: "1.3px solid #2e2e2e",
+          paddingTop: 20,
+        }}
+      >
+        <span style={{ opacity: 0.7, fontSize: 15, fontWeight: 500 }}>
+          30 days trend
+        </span>
+      </div>
+      <div className={"app-content-chart-action"}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            // width: "100%",
+          }}
+        >
+          <Tooltip
+            title={
+              "A simple moving average is a technical indicator that can aid in determining if an asset price will continue or if it will reverse a bull or bear trend"
+            }
+          >
+            <Button
+              icon={
+                <span className="anticon">
+                  {/*<i className="ri-stock-line" />*/}
+                </span>
+              }
+              onClick={() => setDisplaySMA(true)}
+              disabled={gettingStocksHistoricalData || showSMA}
+            >
+              Simple moving average
+            </Button>
+          </Tooltip>
+          <Tooltip title={"Clear"}>
+            <Button
+              icon={
+                <span className="anticon">
+                  <i className="ri-close-line" />
+                </span>
+              }
+              onClick={() => setDisplaySMA(false)}
+              disabled={gettingStocksHistoricalData || showSMA === false}
+            />
+          </Tooltip>
+        </div>
+      </div>
+      <div className={"app-content-chart-action"}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            // width: "100%",
+          }}
+        >
+          <Tooltip
+            title={
+              "The exponential moving average (EMA) is a technical chart indicator that tracks the price of an investment (like a stock or commodity) over time. "
+            }
+          >
+            <Button
+              icon={
+                <span className="anticon">
+                  {/*<i className="ri-stock-line" />*/}
+                </span>
+              }
+              onClick={() => setDisplayEMA(true)}
+              disabled={gettingStocksHistoricalData || showEMA}
+            >
+              Exponential moving average
+            </Button>
+          </Tooltip>
+          <Tooltip title={"Clear"}>
+            <Button
+              icon={
+                <span className="anticon">
+                  <i className="ri-close-line" />
+                </span>
+              }
+              onClick={() => setDisplayEMA(false)}
+              disabled={gettingStocksHistoricalData || showEMA === false}
+            />
+          </Tooltip>
+        </div>
       </div>
     </section>
   );

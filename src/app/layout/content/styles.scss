@@ -10,8 +10,13 @@
     //background-color: #2e2e2e;
     .app-content-chart-section-controls {
       padding: 20px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
     }
-    .app-content-chart-section-loader {
+    .app-content-chart-section-loader,
+    .app-content-chart-section-empty {
       height: 100%;
       width: 100%;
       display: flex;

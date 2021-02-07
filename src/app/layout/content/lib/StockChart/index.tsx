@@ -1,4 +1,4 @@
-import { Radio } from "antd";
+import { Radio, Empty } from "antd";
 import ApexChart from "react-apexcharts";
 import { formatNumber } from "../../../../../_shared/utils";
 import { getStockSymbols } from "../../../../../redux/actions/stocks";
@@ -19,6 +19,10 @@ const stateProps = (state: RootState) => ({
   gettingStocksHistoricalData:
     state.ui.loading["GET_STOCK_HISTORICAL_DATA_HISTORICAL_DATA"],
   companyName: state.stocks.currentSymbolName,
+  showSMA: state.stocks.displaySMA,
+  sma: state.stocks.sma,
+  showEMA: state.stocks.displayEMA,
+  ema: state.stocks.ema,
 });
 
 // Creates connection to state
@@ -28,10 +32,17 @@ const connector = connect(stateProps, dispatchProps);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 // Creates a union props
-
 type StockChartProps = PropsFromRedux & {};
 const StockChart: FC<StockChartProps> = (props) => {
-  const { gettingStocksHistoricalData, companyName, historicalData } = props;
+  const {
+    gettingStocksHistoricalData,
+    companyName,
+    historicalData,
+    sma,
+    showSMA,
+    showEMA,
+    ema,
+  } = props;
 
   const [minMax, setZoomMinMax] = useState({
     min: first(last(historicalData)) as Date | undefined,
@@ -64,11 +75,13 @@ const StockChart: FC<StockChartProps> = (props) => {
       name: companyName,
       data: historicalData,
     },
+    ...(showSMA ? [{ name: companyName + " (SMA)", data: sma }] : []),
+    ...(showEMA ? [{ name: companyName + " (EMA)", data: ema }] : []),
   ];
   const brushSeries = [
-    {
-      data: historicalData,
-    },
+    { name: companyName, data: historicalData },
+    ...(showSMA ? [{ name: companyName + " (SMA)", data: sma }] : []),
+    ...(showEMA ? [{ name: companyName + " (EMA)", data: ema }] : []),
   ];
   const chartOptions = {
     chart: {
@@ -77,6 +90,7 @@ const StockChart: FC<StockChartProps> = (props) => {
       redrawOnParentResize: true,
       redrawOnWindowResize: true,
       height: 230,
+      stacked: false,
       background: "transparent",
       toolbar: {
         autoSelected: "zoom",
@@ -91,7 +105,7 @@ const StockChart: FC<StockChartProps> = (props) => {
       mode: "dark",
     },
     title: {
-      text: `${upperFirst(companyName)}(closing price)`,
+      text: `${upperFirst(companyName)} (closing price)`,
       align: "center",
       style: {
         fontSize: "16px",
@@ -100,7 +114,7 @@ const StockChart: FC<StockChartProps> = (props) => {
         colors: "#ffffff",
       },
     },
-    colors: ["#3e82ff", "#06f17b", "#f9d900"],
+    colors: ["#3e82ff", "#f9d900", "#FF4560"],
     legend: {
       showForSingleSeries: true,
       show: true,
@@ -114,8 +128,8 @@ const StockChart: FC<StockChartProps> = (props) => {
       },
     },
     stroke: {
-      width: 2,
-      curve: "straight",
+      width: [2, 1, 1],
+      curve: ["straight", "smooth", "smooth"],
     },
     dataLabels: {
       enabled: false,
@@ -124,7 +138,88 @@ const StockChart: FC<StockChartProps> = (props) => {
       opacity: 1,
     },
     markers: {
-      size: 0,
+      size: [0, 0, 0],
+      strokeColors: "transparent",
+    },
+    annotations: {
+      position: "front",
+      points: [
+        {
+          x: new Date(first(first(historicalData)) as Date).getTime(),
+          y: last(first(historicalData)),
+          seriesIndex: 0,
+          marker: {
+            size: 2,
+            fillColor: "#fff",
+            strokeColor: "#3e82ff",
+            radius: 2,
+            cssClass: "apexcharts-custom-class",
+          },
+          label: {
+            borderColor: "#3e82ff",
+            offsetY: 0,
+            style: {
+              color: "#fff",
+              background: "#3e82ff",
+            },
+            text: formatNumber(last(first(historicalData)) ?? 0, {
+              style: "currency",
+              locale: "en-US",
+              maximumSignificantDigits: 2,
+            }),
+          },
+        },
+        showSMA && {
+          seriesIndex: 1,
+          x: new Date(first(first(sma)) as Date).getTime(),
+          y: last(first(sma)),
+          marker: {
+            size: 2,
+            fillColor: "#fff",
+            strokeColor: "#f9d900",
+            radius: 2,
+            cssClass: "apexcharts-custom-class",
+          },
+          label: {
+            borderColor: "#f9d900",
+            offsetY: 0,
+            style: {
+              color: "#555",
+              background: "#f9d900",
+            },
+            text: formatNumber(last(first(sma)) ?? 0, {
+              style: "currency",
+              locale: "en-US",
+              maximumSignificantDigits: 2,
+            }),
+          },
+        },
+        showEMA && {
+          seriesIndex: showSMA ? 2 : 1,
+          x: new Date(first(first(ema) as any[]) as Date).getTime(),
+          y: last(first(ema) as any[]) as number,
+          marker: {
+            size: 2,
+            fillColor: "#fff",
+            strokeColor: "#FF4560",
+            radius: 2,
+            cssClass: "apexcharts-custom-class",
+          },
+          label: {
+            borderColor: "#FF4560",
+            offsetY: 0,
+            style: {
+              color: "#fff",
+              background: "#FF4560",
+            },
+            text: formatNumber((last(first(ema) as any[]) as string) ?? 0, {
+              style: "currency",
+              locale: "en-US",
+              maximumSignificantDigits: 2,
+            }),
+          },
+        },
+      ],
     },
     yaxis: {
       labels: {
@@ -142,12 +237,19 @@ const StockChart: FC<StockChartProps> = (props) => {
         fontWeight: 400,
         cssClass: "apexcharts-xaxis-label",
       },
+      opposite: true,
+      axisBorder: {
+        color: "#f2f2f2",
+        show: true,
+        offsetY: -1,
+      },
     },
 
     tooltip: {
-      shared: false,
+      shared: true,
       theme: "dark",
       followCursor: true,
+      enabledOnSeries: true,
       x: {
         show: true,
         format: "dd MMM yyyy",
@@ -158,6 +260,7 @@ const StockChart: FC<StockChartProps> = (props) => {
         // color: '#ffffff'
       },
       y: {
+        show: true,
         formatter: (value: number) =>
           formatNumber(value, {
             style: "currency",
@@ -168,7 +271,6 @@ const StockChart: FC<StockChartProps> = (props) => {
     },
     xaxis: {
       type: "datetime",
-      borderColor: "red",
       format: "dd MM YYYY",
       tickAmount: 6,
       style: {
@@ -206,6 +308,13 @@ const StockChart: FC<StockChartProps> = (props) => {
         target: "quandl-time-series",
         enabled: true,
       },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          endingShape: "rounded",
+        },
+      },
       redrawOnParentResize: true,
       redrawOnWindowResize: true,
       selection: {
@@ -219,7 +328,7 @@ const StockChart: FC<StockChartProps> = (props) => {
     theme: {
       mode: "dark",
     },
-    colors: ["#3e82ff", "#06f17b", "#f9d900"],
+    colors: ["#3e82ff", "#f9d900", "#FF4560"],
     stroke: {
       curve: "straight",
     },
@@ -308,7 +417,12 @@ const StockChart: FC<StockChartProps> = (props) => {
           <Loader />
         </div>
       )}
-      {!gettingStocksHistoricalData && (
+      {!gettingStocksHistoricalData && isEmpty(historicalData) && (
+        <div className={"app-content-chart-section-empty"}>
+          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+        </div>
+      )}
+      {!gettingStocksHistoricalData && !isEmpty(historicalData) && (
         <>
           <div className={"app-content-chart-section-controls"}>
             <Radio.Group
