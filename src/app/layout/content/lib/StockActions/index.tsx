@@ -241,12 +241,15 @@ const StockActions: FC<StockActionsProps> = (props) => {
         className={"app-content-chart-action"}
         style={{
           marginTop: 30,
+          marginBottom: 20,
           borderTop: "1.3px solid #2e2e2e",
-          paddingTop: 20,
+          borderBottom: "1.3px solid #2e2e2e",
+          paddingTop: 10,
+          paddingBottom: 10,
         }}
       >
         <span style={{ opacity: 0.7, fontSize: 15, fontWeight: 500 }}>
-          30 days trend
+          30 days moving averages
         </span>
       </div>
       <div className={"app-content-chart-action"}>

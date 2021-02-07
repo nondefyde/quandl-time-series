@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_shared/utils/symbols.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="14385000" />
+      <workItem from="1612648806546" duration="15199000" />
     </task>
     <task id="LOCAL-00001" summary="feat: created application state management">
       <created>1612659739604</created>
@@ -160,7 +159,28 @@
       <option name="project" value="LOCAL" />
       <updated>1612676055164</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="chore: removed unused module">
+      <created>1612676212193</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612676212193</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore: removed facebook as default company">
+      <created>1612676330514</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612676330514</updated>
+    </task>
+    <task id="LOCAL-00011" summary="chore: added env.local to project">
+      <created>1612699760600</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612699760600</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +194,10 @@
     <MESSAGE value="chore: allowed to push .env.local" />
     <MESSAGE value="fix: chart colouring" />
     <MESSAGE value="chore: enabled ema as default" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: enabled ema as default" />
+    <MESSAGE value="chore: removed unused module" />
+    <MESSAGE value="chore: removed facebook as default company" />
+    <MESSAGE value="chore: added env.local to project" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: added env.local to project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -185,10 +208,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612676209476">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612699757385">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612676209476" />
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612699757385" />
     <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612663873876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -205,17 +228,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612663873875" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612676214722">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612699764443">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612676214722" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612699764443" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1612699720285" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1612632460249" />
-    <state x="291" y="164" width="858" height="572" key="find.popup" timestamp="1612676309439">
+    <state x="291" y="164" width="858" height="572" key="find.popup" timestamp="1612700001632">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="291" y="164" width="858" height="572" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1612676309439" />
+    <state x="291" y="164" width="858" height="572" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1612700001632" />
   </component>
 </project>
