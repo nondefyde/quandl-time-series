@@ -1,0 +1,57 @@
+.app-content {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  //background-color: #ffffff;
+  display: flex;
+  .app-content-chart-section {
+    width: 75%;
+    height: 100%;
+    border-right: 1.3px solid #2e2e2e;
+    //background-color: #2e2e2e;
+    .app-content-chart-section-controls {
+      padding: 20px;
+    }
+    .app-content-chart-section-loader {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chart {
+      padding: 20px;
+      //height: 100%;
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+    }
+  }
+  .app-content-chart-actions {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    .app-content-chart-action {
+      padding-bottom: 20px;
+      display: flex;
+      //align-items: center;
+      flex-flow: column;
+      .app-content-chart-action-title-container {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        .anticon {
+          color: #3e82ff;
+        }
+        .app-content-chart-action-title {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .apexcharts-selection-rect {
+    fill: #ffffff !important;
+  }
+}

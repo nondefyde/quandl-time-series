@@ -1,0 +1,13 @@
+.app-header {
+  //background-color: #2c3641;
+  border-bottom: 1.3px solid #2e2e2e;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .app-header-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+}
