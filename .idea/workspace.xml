@@ -1,44 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_shared/component/Loader/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_shared/component/Loader/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_shared/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_shared/utils/symbols.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/content/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/header/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/app/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/app/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/app/ui.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/stocks/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/middlewares/app/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/middlewares/app/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/middlewares/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/middlewares/stocks/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/app/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/app/ui.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/stocks/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/restful.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="f66675f0-7593-4d1f-a605-a4f977ba75f2" name="Default Changelist" comment="feat: application ui">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockActions/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/lib/StockChart/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,12 +104,39 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="1371000" />
+      <workItem from="1612648806546" duration="3102000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: created application state management">
+      <created>1612659739604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612659739604</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: application ui">
+      <created>1612659794366</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612659794366</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: application ui">
+      <created>1612659816293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612659816293</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: created application state management" />
+    <MESSAGE value="feat: application ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: application ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -152,26 +147,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612659789791">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612659823930">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612659789791" />
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612652241985">
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612659823930" />
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612659889671">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1612652241985" />
-    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1612652241983">
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1612659889671" />
+    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1612659889669">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1612652241983" />
-    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1612652241982">
+    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1612659889669" />
+    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1612659889668">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1612652241982" />
-    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1612652241984">
+    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1612659889668" />
+    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1612659889670">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612652241984" />
+    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612659889670" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

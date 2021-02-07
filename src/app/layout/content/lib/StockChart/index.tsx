@@ -4,10 +4,11 @@ import { formatNumber } from "../../../../../_shared/utils";
 import { getStockSymbols } from "../../../../../redux/actions/stocks";
 import { RootState } from "../../../../../redux/types";
 import { connect, ConnectedProps } from "react-redux";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { RadioChangeEvent } from "antd/es/radio";
 import Loader from "../../../../../_shared/component/Loader";
-import { upperFirst, get, first, last } from "lodash";
+import { upperFirst, get, first, last, isEmpty } from "lodash";
+import moment from "moment";
 
 const dispatchProps = {
   getStockSymbols,
@@ -32,8 +33,31 @@ type StockChartProps = PropsFromRedux & {};
 const StockChart: FC<StockChartProps> = (props) => {
   const { gettingStocksHistoricalData, companyName, historicalData } = props;
 
-  const min = first(last(historicalData)) as Date | undefined;
-  const max = first(first(historicalData)) as Date | undefined;
+  const [minMax, setZoomMinMax] = useState({
+    min: first(last(historicalData)) as Date | undefined,
+    newMin: first(last(historicalData)) as Date | undefined,
+    max: first(first(historicalData)) as Date | undefined,
+  });
+
+  const { min, max, newMin } = minMax;
+
+  useEffect(() => {
+    if (!isEmpty(historicalData)) {
+      setZoomMinMax({
+        min: first(last(historicalData)) as Date | undefined,
+        newMin: first(last(historicalData)) as Date | undefined,
+        max: first(first(historicalData)) as Date | undefined,
+      });
+    }
+  }, [historicalData]);
+
+  const fiveDays = moment(max).subtract(5, "days");
+  const oneMonth = moment(max).subtract(1, "month");
+  const threeMonth = moment(max).subtract(3, "month");
+  const sixMonth = moment(max).subtract(6, "month");
+  const oneYear = moment(max).subtract(1, "year");
+  const threeYear = moment(max).subtract(3, "year");
+  const fiveYear = moment(max).subtract(5, "year");
 
   const chartSeries = [
     {
@@ -187,7 +211,7 @@ const StockChart: FC<StockChartProps> = (props) => {
       selection: {
         enabled: true,
         xaxis: {
-          min: min ? new Date(min).getTime() : min,
+          min: newMin ? new Date(newMin).getTime() : min,
           max: max ? new Date(max).getTime() : max,
         },
       },
@@ -231,7 +255,52 @@ const StockChart: FC<StockChartProps> = (props) => {
   const onTimelineChange = (event: RadioChangeEvent) => {
     const timeline = event?.target?.value ?? "all";
     setTimeline(timeline);
+
+    switch (timeline) {
+      case "5d":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: fiveDays.toDate() };
+        });
+        break;
+      case "1m":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: oneMonth.toDate() };
+        });
+        break;
+      case "3m":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: threeMonth.toDate() };
+        });
+        break;
+      case "6m":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: sixMonth.toDate() };
+        });
+        break;
+      case "1y":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: oneYear.toDate() };
+        });
+        break;
+      case "3y":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: threeYear.toDate() };
+        });
+        break;
+      case "5y":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: fiveYear.toDate() };
+        });
+        break;
+      case "all":
+        setZoomMinMax((prev) => {
+          return { ...prev, newMin: prev.min };
+        });
+        break;
+      default:
+    }
   };
+
   return (
     <section className={"app-content-chart-section"}>
       {gettingStocksHistoricalData && (
@@ -248,13 +317,27 @@ const StockChart: FC<StockChartProps> = (props) => {
               defaultValue="all"
               optionType="button"
             >
-              <Radio.Button value="5d">5D</Radio.Button>
-              <Radio.Button value="1m">1M</Radio.Button>
-              <Radio.Button value="3m">3M</Radio.Button>
-              <Radio.Button value="6m">6M</Radio.Button>
-              <Radio.Button value="1y">1Y</Radio.Button>
-              <Radio.Button value="3y">3Y</Radio.Button>
-              <Radio.Button value="5y">5Y</Radio.Button>
+              <Radio.Button value="5d" disabled={fiveDays.isBefore(min)}>
+                5D
+              </Radio.Button>
+              <Radio.Button value="1m" disabled={oneMonth.isBefore(min)}>
+                1M
+              </Radio.Button>
+              <Radio.Button value="3m" disabled={threeMonth.isBefore(min)}>
+                3M
+              </Radio.Button>
+              <Radio.Button value="6m" disabled={sixMonth.isBefore(min)}>
+                6M
+              </Radio.Button>
+              <Radio.Button value="1y" disabled={oneYear.isBefore(min)}>
+                1Y
+              </Radio.Button>
+              <Radio.Button value="3y" disabled={threeYear.isBefore(min)}>
+                3Y
+              </Radio.Button>
+              <Radio.Button value="5y" disabled={fiveYear.isBefore(min)}>
+                5Y
+              </Radio.Button>
               <Radio.Button value="all">All</Radio.Button>
             </Radio.Group>
           </div>

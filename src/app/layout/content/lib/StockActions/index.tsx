@@ -82,13 +82,13 @@ const StockActions: FC<StockActionsProps> = (props) => {
     const start_date = Object.assign(
       {},
       !isEmpty(duration?.[0]) && moment(duration?.[0]).isValid()
-        ? moment(duration?.[0]).toDate()
+        ? { start_date: moment(duration?.[0]).toDate() }
         : {}
     );
     const end_date = Object.assign(
       {},
       !isEmpty(duration?.[1]) && moment(duration?.[1]).isValid()
-        ? moment(duration?.[1]).toDate()
+        ? { end_date: moment(duration?.[1]).toDate() }
         : {}
     );
     getStockPrices({ transform, ...end_date, ...start_date, collapse: period });
