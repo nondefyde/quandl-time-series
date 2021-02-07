@@ -100,7 +100,7 @@
       <workItem from="1612563719885" duration="4084000" />
       <workItem from="1612609541546" duration="4578000" />
       <workItem from="1612615191904" duration="22471000" />
-      <workItem from="1612648806546" duration="13914000" />
+      <workItem from="1612648806546" duration="14197000" />
     </task>
     <task id="LOCAL-00001" summary="feat: created application state management">
       <created>1612659739604</created>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612675072888</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: chart colouring">
+      <created>1612675813991</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612675813991</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +163,8 @@
     <MESSAGE value="feat: implemented time-based zoom" />
     <MESSAGE value="feat: added 30 day trends" />
     <MESSAGE value="chore: allowed to push .env.local" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: allowed to push .env.local" />
+    <MESSAGE value="fix: chart colouring" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: chart colouring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612565372652">
@@ -167,10 +175,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1612566192397" />
-    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612675070245">
+    <state x="267" y="0" key="CommitChangelistDialog2" timestamp="1612675810332">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612675070245" />
+    <state x="267" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1612675810332" />
     <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1612663873876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -187,10 +195,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1612663873875" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612675074603">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1612675816882">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612675074603" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1612675816882" />
     <state x="373" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612632460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -35,7 +35,7 @@ const defaultState: StockState = {
     currentSymbolName: "Facebook inc",
   },
   displaySMA: false,
-  displayEMA: false,
+  displayEMA: true,
 };
 
 const stockReducer = (state = defaultState, action: Action): StockState => {
